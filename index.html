@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reverse String</title>
+    </head>
+    <body>
+        <div class="contc">
+            <textarea
+                name="message"
+                id="mytext"
+                cols="100"
+                rows="10"
+                placeholder="Enter your text to reverse"
+            ></textarea>
+            <button type="button" onclick="work()">
+                Click to Reverse
+            </button>
+            <fieldset class="opt">
+                <legend>Reverse of your text</legend>
+                <p id="demo"></p>
+            </fieldset>
+        </div>
+    </body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .contc{
+            width: 80%;
+            height: auto;
+            border: 2px solid #aaaaaa;
+            margin: 200px auto;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 200px auto;
+            /* box-shadow: -8px 8px 12px #aaaaaa; */
+            box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+            overflow: hidden;
+
+            border-radius: 20px;
+        }
+        .opt{
+            width: 90%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #aaaaaa;
+            margin: 10px auto;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        textarea{
+            width: 80%;
+            padding: 20px 10px;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+        textarea:hover{
+            border: 3px solid rgb(0,255,0,0.5);
+        }
+        button{
+            background: rgb(124, 255, 124);
+            font-weight: bold;
+            border-radius: 3px;
+            box-shadow: 2px 2px 2px #aaaaaa;
+            cursor: pointer;
+        }
+        button:hover{
+            background: rgba(132, 223, 132, 0.8);
+            transform: scale(1.1);
+        }
+        #demo{
+            padding: 10px 20px;
+            text-align: center;
+            display: flex;
+        }
+        legend{
+            padding: 5px 5px;
+            margin: 5px 5px;
+            color: navy;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function ReverseString(str) {
+                 return str.split('').reverse().join('');
+        }
+        function work()
+        {
+            let str =document.getElementById("mytext").value;
+            let ans=ReverseString(str);
+            document.getElementById("demo").innerHTML=ans;
+            
+        }
+    </script>
+</html>
